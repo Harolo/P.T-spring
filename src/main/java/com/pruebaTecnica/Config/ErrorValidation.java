@@ -12,6 +12,9 @@ import java.util.Map;
 
 @RestControllerAdvice
 public class ErrorValidation {
+
+//    este metodo se utiliza para capturar los errores de validacion que se presenten al
+//    momnetode realizar las peticionesen las que se utilicen los dto
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Map<String, String> handleValidationExceptions(MethodArgumentNotValidException ex) {
