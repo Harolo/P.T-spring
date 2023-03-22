@@ -9,7 +9,6 @@ import java.util.Optional;
 
 public interface PersonaRepository extends JpaRepository<PersonaEntity, Long> {
 
-//    query que busca si exitse una persona con el nombre y el apellido enviados
     @Query(value = "SELECT * FROM persona p WHERE p.per_nombre=:nombre AND p.per_apellidos=:apellido",nativeQuery = true)
     Optional<PersonaEntity> findByNombreAndApellido(@Param("nombre") String nombre, @Param("apellido") String apellido);
 
